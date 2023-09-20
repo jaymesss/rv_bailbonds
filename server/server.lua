@@ -103,6 +103,11 @@ RegisterNetEvent('rv_bailbonds:server:SetPlayerBail', function(id, amount)
     MySQL.insert.await('INSERT INTO `bailbonds` (citizenid, name, amount) VALUES (?, ?, ?)', {
         Player.PlayerData.citizenid, Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname, amount
     })
+    for k,v in pairs(QBCore.Functions.GetQBPlayers()) do
+        if v.Functions.GetItemByName(Config.TabletItem) then 
+            TriggerClientEvent('QBCore:Notify', v.PlayerData.source, string.gsub(Locale.Info.new_bail, "fullname", Player.PlayerData.charinfo.firstname .. ' ' .. Player.PlayerData.charinfo.lastname), 'success')
+        end
+    end
 end)
 
 RegisterNetEvent('rv_bailbonds:server:MakePayment', function(amount)

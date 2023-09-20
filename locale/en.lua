@@ -38,4 +38,5 @@ Locale.Info = {
     your_bail_is = "Your bail is set at $amount",
     opening_tablet = "Opening Tablet...",
     opening_laptop = "Opening Laptop...",
+    new_bail = "New bail posted for fullname."
 }
