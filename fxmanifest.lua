@@ -14,4 +14,10 @@ shared_script {
     'shared/config.lua',
     'locale/en.lua'
 }
+escrow_ignore {
+    "images/**",
+    "shared/**.lua",
+    "locale/**.lua",
+    "README.md",
+}
 lua54 'yes'
