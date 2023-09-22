@@ -1,7 +1,7 @@
 Config = {}
 Config.CoreName = "qb-core"
 Config.JobName = "bondsman"
-Config.PoliceJobName = "police"
+Config.PoliceJobNames = {"police", "police2"}
 Config.TabletItem = "bondsman_tablet"
 Config.MeetingLocation = vector4(1828.67, 2586.57, 46.01, 275.59)
 Config.ExitJailLocation = vector4(1848.99, 2585.97, 45.67, 270.03)

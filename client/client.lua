@@ -122,7 +122,7 @@ RegisterCommand('bail', function(source, args, rawCommand)
 end, false)
 
 RegisterCommand('bond', function(source, args, rawCommand)
-    if PlayerJob.name ~= Config.PoliceJobName then
+    if Config.PoliceJobNames[PlayerJob.name] ~= nil then
         QBCore.Functions.Notify(Locale.Errors.not_police, 'error', 5000)
         return
     end
@@ -218,7 +218,6 @@ RegisterNetEvent('rv_bailbonds:client:OpenLaptop', function()
             bonds = Citizen.Await(p)
             local options = {}
             for k,v in pairs(bonds) do
-                print(json.encode(v))
                 options[#options+1] = {
                     title = json.decode(v.charinfo).firstname .. ' ' .. json.decode(v.charinfo).lastname .. ' $' .. v.bailowed,
                     description = string.gsub(Locale.Info.owes, "amount", v.bailowed),
